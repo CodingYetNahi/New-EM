@@ -16,7 +16,7 @@ function safeHttpsUrl(value: string | undefined, label: string, fallback?: strin
 
 export const platformConfig = Object.freeze({
   siteUrl: safeHttpsUrl(import.meta.env.VITE_SITE_URL, 'VITE_SITE_URL', defaultSiteUrl) ?? defaultSiteUrl,
-  studentLoginUrl: safeHttpsUrl(import.meta.env.VITE_TESTPRESS_STUDENT_URL, 'VITE_TESTPRESS_STUDENT_URL', 'https://tests.expressmock.in'),
+  studentLoginUrl: safeHttpsUrl(import.meta.env.VITE_TESTPRESS_STUDENT_URL, 'VITE_TESTPRESS_STUDENT_URL', 'https://expressmock.testpress.in'),
   adminLoginUrl: safeHttpsUrl(import.meta.env.VITE_TESTPRESS_ADMIN_URL, 'VITE_TESTPRESS_ADMIN_URL'),
   contactEmail: (import.meta.env.VITE_CONTACT_EMAIL as string | undefined)?.trim() || null,
   contactFormUrl: safeHttpsUrl(import.meta.env.VITE_CONTACT_FORM_URL, 'VITE_CONTACT_FORM_URL'),
