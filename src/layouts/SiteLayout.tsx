@@ -11,7 +11,7 @@ export function SiteLayout() {
   const [open,setOpen]=useState(false); const location=useLocation();
   useEffect(()=>{ setOpen(false); window.scrollTo({top:0,behavior:'instant'}); },[location.pathname]);
   return <div className="min-h-screen bg-white text-slate-800">
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"><Container className="flex h-14 items-center justify-between py-1">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"><Container className="flex h-10 items-center justify-between py-1">
       <Link to="/" className="flex items-center gap-2 rounded-lg font-bold text-brand-900 focus-ring" aria-label="ExpressMock home"><img src={`${import.meta.env.BASE_URL}images/expressmock-logo.png`} alt="ExpressMock" className="h-auto w-[125px] sm:w-[145px]"/></Link>
       <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">{navigation.map(item=><NavLink key={item.to} to={item.to} end={item.to==='/'} className={({isActive})=>`nav-link ${isActive?'nav-link-active':''}`}>{item.name}</NavLink>)}</nav>
       <div className="hidden items-center gap-3 lg:flex"><ExternalButton href={platformConfig.studentLoginUrl} variant="secondary">Student Login</ExternalButton><ExternalButton href={platformConfig.studentLoginUrl}>Get Started</ExternalButton></div>
